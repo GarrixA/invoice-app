@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Modal from 'react-modal'
+import { useState } from 'react';
+import Form from './components/Form';
+import Funk from './components/Funk';
+Modal.setAppElement('#root');
+
 
 function App() {
+  const [popForm, setPopForm ] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={() => setPopForm(true)}>open modal</button>
+      <Modal isOpen={popForm}>
+        {/* <Form /> */}
+        <Funk />
+        <div>
+          <button className='add' onClick={(addition) => setPopForm(true)}>Add</button>
+          <button onClick={() => setPopForm(false)}>Close</button>
+        </div>
+      </Modal>
     </div>
   );
 }
