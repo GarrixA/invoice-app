@@ -1,0 +1,15 @@
+/* main body  */
+
+.main{
+    transition-duration: 300ms;
+
+    min-height: 100vh;
+    background-color: #f8f8fb;
+    @media (prefers-color-scheme: dark) {
+        background-color: #3243c9;
+    }
+}
+
+.header{
+    background-color: #0117c0;
+}
